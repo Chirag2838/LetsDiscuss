@@ -1,0 +1,22 @@
+{
+  "name": "quora",
+  "version": "1.0.0",
+  "description": "social media where people can communicate through questions and answers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chirag2838/QuoraClone.git"
+  },
+  "author": "Chirag Malhotra Gaurav Rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chirag2838/QuoraClone/issues"
+  },
+  "homepage": "https://github.com/Chirag2838/QuoraClone#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
