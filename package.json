@@ -33,10 +33,16 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "express": "^4.16.3",
+<<<<<<< HEAD
     "jsonwebtoken": "^8.2.1",
+=======
+    "jquery": "^1.9.1",
+>>>>>>> 068d69c2e4f086e6915fe026538c7828e658e40d
     "mongoose": "^5.0.13",
+    "popper.js": "^1.14.3",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
