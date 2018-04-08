@@ -1,3 +1,7 @@
-npm install
+Install dependencies
 
-npm start
+$ npm install
+
+Run the app
+
+$ npm run build
