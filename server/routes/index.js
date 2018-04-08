@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var register = require('../controllers/quoraCtrl');
+var auth = require('../controllers/authCtrl');
 
 router
     .route('/registration')
-    .post(register.registration);
+    .post(auth.registration);
+
+router
+    .route('/login')
+    .post(auth.login);
 
     module.exports = router;
