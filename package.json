@@ -1,5 +1,5 @@
 {
-  "name": "quora",
+  "name": "letsdiscuss",
   "version": "1.0.0",
   "description": "social media where people can communicate through questions and answers.",
   "main": "app.js",
@@ -36,11 +36,8 @@
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "express": "^4.16.3",
-<<<<<<< HEAD
+    "jquery": "^3.3.1",
     "jsonwebtoken": "^8.2.1",
-=======
-    "jquery": "^1.9.1",
->>>>>>> 068d69c2e4f086e6915fe026538c7828e658e40d
     "mongoose": "^5.0.13",
     "popper.js": "^1.14.3",
     "rxjs": "^5.5.6",
