@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var auth = require('../controllers/authCtrl');
+var search = require('../controllers/searchCtrl');
 
 router
     .route('/registration')
@@ -10,4 +11,9 @@ router
     .route('/login')
     .post(auth.login);
 
-    module.exports = router;
+router
+    .route('/search')
+    .get(search.searchPeople);
+
+    
+module.exports = router;
