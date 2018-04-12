@@ -31,7 +31,7 @@ module.exports.registration = function(req, res){
 					}
 					else
 					{
-						console.log(data);
+						console.log('data', data);
 
 						var token = jwt.sign(data.toJSON(), 'secret', {expiresIn : 86400});
 
@@ -106,4 +106,55 @@ module.exports.login = function(req, res){
 			}
 		}
 	})
+}
+
+module.exports.verifyToken = function(req, res, next){
+
+	var token = req.param('token');
+
+	if(token)
+	{
+
+		jwt.verify(token, 'secret', function(err1, decoded){
+
+			console.log(decoded);
+
+			quoraUsers.findOne({'email' : decoded.email}, function(err2, user){
+
+				if((err1 || err2) || (user.token != token))
+				{
+
+					res.json({success : false, message : 'Authentication failed'});
+				}
+
+				else
+				{
+
+					req.decoded = decoded;
+					next();
+				}
+			});
+		});
+	}
+
+	else
+	{
+
+		res.json({success : false, message : 'token not provided'});
+	}
+}
+
+module.exports.logout = function(req, res){
+
+
+	quoraUsers.findOneAndUpdate({'email' : req.decoded.email}, {$unset : {'token' : 1}}, {new : true}, function(err, doc){
+
+		if(err)
+		{
+
+			console.log(err);
+		}
+	});
+
+	res.json({success : true, message : 'Successfully logged out'});
 }
