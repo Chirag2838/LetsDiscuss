@@ -1,0 +1,42 @@
+.auth
+{
+
+	background-color: white;
+	margin-top: 10%;
+	border-radius: 2%;
+	/*background-image: url(../images/background5.jpg);*/
+}
+
+.mainHeading
+{
+
+	font-size: 40px;
+	color: #5389e7;
+	font-family: 'Anton', sans-serif;
+	font-weight: bold;
+	padding-left: 43px;
+	padding-top: 10px;
+}
+
+.reg
+{
+
+	color: #5d6d7e;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+.login
+{
+
+	padding-top: 50px;
+}
+
+.about
+{
+
+	font-family: 'Great Vibes', cursive;
+	font-size: 27px;
+	color: red;
+}
