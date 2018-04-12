@@ -1,9 +1,24 @@
 var express = require('express');
 var router = express.Router();
-var register = require('../controllers/quoraCtrl');
+var auth = require('../controllers/authCtrl');
+var search = require('../controllers/searchCtrl');
+var follow = require('../controllers/followCtrl');
 
 router
     .route('/registration')
-    .post(register.registration);
+    .post(auth.registration);
 
-    module.exports = router;
+router
+    .route('/login')
+    .post(auth.login);
+
+router
+    .route('/search')
+    .get(search.searchPeople);
+
+router
+    .route('/follow')
+    .get(follow.followModule);
+
+    
+module.exports = router;
