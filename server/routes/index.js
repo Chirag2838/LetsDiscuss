@@ -28,5 +28,5 @@ router
     .route('/logout')
     .get(auth.logout);
 
-    
+
 module.exports = router;

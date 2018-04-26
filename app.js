@@ -20,6 +20,10 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 app.use('/api', routes);
 
+app.get('*', function(req, res) {
+  res.sendfile(path.join(__dirname, '/dist/index.html'))
+})
+
 var server = app.listen(app.get('port'), function(){
 
 	var port = server.address().port;
