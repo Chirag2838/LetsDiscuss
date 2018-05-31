@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var auth = require('../controllers/authCtrl');
 var search = require('../controllers/searchCtrl');
-var follow = require('../controllers/followCtrl');
 var token = require('../controllers/tokenVerify')
 
 router
