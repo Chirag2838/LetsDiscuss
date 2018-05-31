@@ -21,10 +21,6 @@ router
     .get(search.searchPeople);
 
 router
-    .route('/follow')
-    .get(follow.followModule);
-
-router
     .route('/logout')
     .get(auth.logout);
 
