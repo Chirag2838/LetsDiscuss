@@ -1,0 +1,32 @@
+<div class="col-md-5 col-md-offset-2">
+
+  <div class="col-md-12"><br><p class="reg">Login</p></div>
+
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+
+    <div class="col-md-10 form-group">
+
+      <input type="email" name="email" placeholder="Email" class="form-control"
+             ngModel required #email="ngModel" email>
+      <span
+        class="red"
+        *ngIf="!email.valid && email.touched">enter valid email</span>
+    </div>
+
+    <div class="col-md-10 form-group">
+
+      <input type="password" name="password" placeholder="Password" class="form-control"
+             ngModel required #password="ngModel">
+      <span
+        class="red"
+        *ngIf="!password.valid && password.touched">can't leave this empty</span>
+    </div>
+
+    <div class="col-md-6 col-md-offset-2 form-group">
+
+      <button class="btn btn-primary form-control" type="submit" [disabled]="!f.valid">
+        Login
+      </button>
+    </div>
+  </form>
+</div>

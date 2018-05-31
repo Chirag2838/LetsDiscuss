@@ -1,0 +1,68 @@
+<div class="col-md-5">
+  <div class="col-md-12"><br><p class="reg">Registration</p></div>
+
+<form (ngSubmit) = "onSubmit()" #f="ngForm">
+
+  <div class="col-md-6 form-group">
+
+    <input type="text" name="firstname" placeholder="Firstname" class="form-control"
+           ngModel required #firstname="ngModel">
+    <span
+      class="red"
+      *ngIf="!firstname.valid && firstname.touched">can't leave this empty</span>
+  </div>
+
+
+  <div class="col-md-6 form-group">
+
+    <input type="text" name="lastname" placeholder="Lastname" class="form-control"
+           ngModel required #lastname="ngModel">
+    <span
+      class="red"
+      *ngIf="!lastname.valid && lastname.touched">can't leave this empty</span>
+  </div>
+
+  <div class="col-md-12 form-group">
+
+    <input type="text" name="email" placeholder="Email" class="form-control"
+           ngModel required email #email="ngModel">
+    <span
+      class="red"
+      *ngIf="!email.valid && email.touched">enter valid email</span>
+  </div>
+
+  <div class="col-md-12 form-group">
+
+    <input type="text" name="username" placeholder="Username" class="form-control"
+           ngModel required #username="ngModel">
+    <span
+      class="red"
+      *ngIf="!username.valid && username.touched">can't leave this empty</span>
+  </div>
+
+  <div class="col-md-12 form-group" >
+
+    <input type="password" name="password" placeholder="Password" class="form-control"
+           ngModel required #password="ngModel">
+    <span
+      class="red"
+      *ngIf="!password.valid && password.touched">can't leave this empty</span>
+  </div>
+
+  <div class="col-md-12 form-group" >
+
+    <input type="password" name="confirmpassword" placeholder="Verify password" class="form-control"
+           ngModel required validateEqual="password" #confirmpassword="ngModel">
+    <span
+      class="red"
+      *ngIf="!confirmpassword.valid && confirmpassword.touched">password mismatch</span>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3 form-group">
+
+    <button class="btn btn-primary form-control" type="submit" [disabled]="!f.valid" >
+      Register
+    </button>
+  </div>
+</form>
+</div>
