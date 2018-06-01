@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {LoginSignupService} from '../login-signup.service';
+import {LoginSignupResponse} from '../response/login-signup-response';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +11,7 @@ import {NgForm} from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   @ViewChild('f') form: NgForm;
-  userData = {
+  userdata = {
     firstname: '',
     lastname: '',
     email: '',
@@ -17,18 +19,23 @@ export class SignupComponent implements OnInit {
     password: ''
   };
 
-  constructor() {  }
+  constructor(private signupService: LoginSignupService) {  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.userData.firstname = this.form.value.firstname;
-    this.userData.lastname = this.form.value.lastname;
-    this.userData.email = this.form.value.email;
-    this.userData.username = this.form.value.username;
-    this.userData.password = this.form.value.password;
-    console.log(this.userData);
+    this.userdata.firstname = this.form.value.firstname;
+    this.userdata.lastname = this.form.value.lastname;
+    this.userdata.email = this.form.value.email;
+    this.userdata.username = this.form.value.username;
+    this.userdata.password = this.form.value.password;
+
+    this.signupService.registerUser(this.userdata)
+      .subscribe((data: LoginSignupResponse) => {
+        console.log(data);
+      });
+
   }
 
 }

@@ -1,5 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { LoginSignupResponse } from '../response/login-signup-response';
+import { LoginSignupService } from '../login-signup.service';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +11,24 @@ import {NgForm} from '@angular/forms';
 export class LoginComponent implements OnInit {
   @ViewChild('f') form: NgForm;
 
-  userData = {
+  userdata = {
     email: '',
     password: ''
   };
 
-  constructor() { }
+  constructor(private loginService: LoginSignupService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.userData.email = this.form.value.email;
-    this.userData.password = this.form.value.password;
+    this.userdata.email = this.form.value.email;
+    this.userdata.password = this.form.value.password;
+
+    this.loginService.loginUser(this.userdata)
+      .subscribe((data: LoginSignupResponse) => {
+        console.log(data);
+      });
   }
 
 }

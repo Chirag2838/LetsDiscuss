@@ -6,4 +6,109 @@
 	background-size: cover;
 }
 
+.navbar {
+    position: fixed;
+    z-index: 5;
+}
+
+.navbar-brand {
+    color: forestgreen !important;
+}
+
+.form-inline {
+    margin-left: 100px;
+}
+
+.logout {
+    margin-left: 380px;
+}
+
+.boundary {
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar {
+    padding-top: 220px;
+    border-right : 2px solid forestgreen;
+    padding-bottom: 200px;
+}
+
+.sidebar-link {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.links {
+    color: forestgreen;
+}
+
+.sidebar-link:hover{
+    background-color: forestgreen;
+    color: white;
+    cursor: pointer;
+}
+
+.top-link{
+    margin-top: 10px;
+}
+
+.answer {
+    cursor: pointer;
+    color: black;
+}
+
+.answer:hover {
+    cursor: pointer;
+    color: forestgreen;
+}
+
+.post {
+    padding-top: 100px;
+}
+
+@media (max-width : 992px) {
+    .form-inline {
+        margin-left: -10px;
+    }
+    .logout {
+        margin-left: -10px;
+    }
+}
+
+@media (min-width : 992px) and (max-width : 1140px) {
+    .logout {
+        margin-left : 20px;
+    }
+}
+
+@media (min-width : 1140px) and (max-width : 1350px) {
+    .logout {
+        margin-left : 140px;
+    }
+}
+
+@media (max-width : 580px) {
+    .boundary{
+        position: relative;
+    }
+}
+
+
+@media (max-width : 480px) {
+    .sidebar {
+        margin-top: -150px;
+        border-right: none;
+        position: relative;
+        z-index: 2;
+    }
+    .post {
+        margin-top: -250px;
+    }
+    
+}
+
+
 
